@@ -1,5 +1,6 @@
 # SynologyMerge
 A bashscripts that moves packages from one Synology NAS volume to another.
+Inspired by (@Saintdle's guide)[https://veducate.co.uk/synology-moving-a-package-between-volumes/]
 ## Disclaimer
 This script is in Beta and hanven't been tested on divices. Use at your own risk. Feel free to improve the script and submit a push request.
 ## Useage

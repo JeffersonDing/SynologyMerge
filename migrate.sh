@@ -14,7 +14,7 @@ Help(){
 }
 All(){
 Dir
-for f in /$FROM/\@appstore
+for f in /$FROM/\@appstore/*
 do 
 	pkg="${f##*/}"
 	echo $pkg
@@ -29,7 +29,7 @@ exit 1
 }
 Run(){
 Dir
-for f in ./*
+for f in /$FROM/\@appstore/*
 do 
 	pkg="${f##*/}"
 	echo $pkg

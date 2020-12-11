@@ -4,7 +4,6 @@ Dir(){
  if [ ! -d /$TO/\@appstore ]; then
    mkdir -p /$TO/\@appstore
  fi
-echo "Create DIR"
 }
 Help(){
 	printf '\n%s\n\t%s' '-f' 'Target(from) volume, should be in the form of volumeX'
@@ -15,11 +14,10 @@ Help(){
 }
 All(){
 Dir
-for f in ./*
+for f in /$FROM/\@appstore
 do 
 	pkg="${f##*/}"
 	echo $pkg
-	echo "EXEC!!"
 	/var/packages/$pkg/scripts/start-stop-status stop
 	mv /$FROM/\@appstore/$pkg /$TO/\@appstore
 	rm /var/packages/$pkg/target
@@ -37,7 +35,6 @@ do
 	echo $pkg
 	read -p "proceed?(y/n) " pcd
 	if [ "$pcd" == "y" ]; then
-		echo "EXEC!! ALL"
 		/var/packages/$pkg/scripts/start-stop-status stop
 		mv /$FROM/\@appstore/$pkg /$TO/\@appstore
 		rm /var/packages/$pkg/target
